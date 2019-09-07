@@ -1,7 +1,7 @@
 export const getLocalNode = (nodeName) => {
-    let data = window.localStorage.getItem(nodeName)
-    if(data)
-        return JSON.parse(data)
+    let data = JSON.parse( window.localStorage.getItem(nodeName))
+    if(data && data.length > 0)
+        return data
     else 
         return null
 }

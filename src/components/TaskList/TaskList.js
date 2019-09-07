@@ -1,12 +1,10 @@
 import React from 'react';
+
 import TaskItem from '../TaskItem/TaskItem';
 import { Task } from './../../entities/Task';
 import dummyTasks from './../../configuration/init';
 import { getLocalNode, setLocalNode } from '../../service/local';
-
-
-
-
+import NewTask from './../NewTask/NewTask';
 
 class TaskList extends React.Component {
     constructor(props) {
@@ -29,29 +27,29 @@ class TaskList extends React.Component {
         return taskList
     }
 
-    componentDidMount() {
+    update = () => {
         let node = 'tasks'
-      let tasks = getLocalNode(node)
-
-        if(!tasks) {
-            tasks = this.processTasks(dummyTasks)
-            setLocalNode(node, tasks)
-        } else {
-           tasks = this.processTasks(tasks)
-        }
-
-      this.setState({tasks:tasks})
- 
+        let tasks = getLocalNode(node)
+  
+          if(!tasks) {
+              tasks = this.processTasks(dummyTasks)
+              setLocalNode(node, tasks)
+          } else {
+             tasks = this.processTasks(tasks)
+          }
+  
+        this.setState({tasks:tasks})
     }
 
-    _updateList  = () => {
-        
+    componentDidMount() {
+     
+        this.update()
     }
-
 
     render() { 
         return ( 
             <div>
+                <NewTask onUpdate={this.update}/>
                 {this.state.tasks.map( (task, index) => 
                     <TaskItem task={task} key={index} />
                 )}

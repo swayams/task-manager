@@ -4,7 +4,7 @@ import './TaskItem.css'
 
 function TaskItem (props) {
     let {task, ...rest} = {...props}
-    console.log(task)
+  
     return (
      <div className="taskItem">     
         <div>Description: {task.description}</div> 

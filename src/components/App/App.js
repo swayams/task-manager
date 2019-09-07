@@ -9,7 +9,7 @@ import NewTask from './../NewTask/NewTask';
 function App() {
   return (
     <div className="App">
-      <NewTask />
+      
       <TaskList />
     </div>
   );
