@@ -1,3 +1,12 @@
+
+I was supposed to use Material UI for the styling after the work with localstorage was done. Only get operation is completed. Update/delete/create are not complete. 
+
+
+
+
+
+
+------------------------------------------
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
